@@ -3,7 +3,7 @@
 
 
 
-![vorp_fishing_lua](https://user-images.githubusercontent.com/1690916/144717557-af0e5167-38a1-4a15-ab2f-0f14a5366e41.png)
+
 
 
 ## How to install
