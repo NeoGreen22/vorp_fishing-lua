@@ -69,7 +69,7 @@ local fishNames = {
 Citizen.CreateThread(function()
     Citizen.Wait(2000)
     for index,item in pairs(Config.Baits) do
-        VorpInv.RegisterUsableItem(item, function(data)
+        Inventory.RegisterUsableItem(item, function(data)
     		local UsableBait = item
     		Inventory.subItem(data.source, UsableBait, 1)
     		TriggerClientEvent("vorp_fishing:UseBait", data.source, UsableBait)
