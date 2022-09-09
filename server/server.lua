@@ -127,7 +127,7 @@ AddEventHandler("vorp_fishing:discord_keep", function(fishModel, fishWeight)
                     },
                 },
                 ["footer"]=  {
-                    ["text"]= "Vorp Fishing",
+                    ["text"]= "Gum Fishing",
                 },
             }
         }
