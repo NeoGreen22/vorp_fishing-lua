@@ -1,9 +1,10 @@
-local VorpCore = {}
+local gumCore = {}
 TriggerEvent("getCore",function(core)
-    VorpCore = core
+    gumCore = core
 end)
 
-VorpInv = exports.vorp_inventory:vorp_inventoryApi()
+Inventory = exports.gum_inventory:gum_inventoryApi()
+gum = exports.gum_core:gumAPI()
 
 local fishEntity = {
     [`A_C_FISHBLUEGIL_01_MS`]        = "a_c_fishbluegil_01_ms",
@@ -70,9 +71,9 @@ Citizen.CreateThread(function()
     for index,item in pairs(Config.Baits) do
         VorpInv.RegisterUsableItem(item, function(data)
     		local UsableBait = item
-    		VorpInv.subItem(data.source, UsableBait, 1)
+    		Inventory.subItem(data.source, UsableBait, 1)
     		TriggerClientEvent("vorp_fishing:UseBait", data.source, UsableBait)
-            VorpInv.CloseInv(data.source)
+            Inventory.CloseInv(data.source)
         end)
     end
 end)
@@ -80,18 +81,18 @@ end)
 RegisterServerEvent('vorp_fishing:FishToInventory')
 AddEventHandler("vorp_fishing:FishToInventory", function(fishModel)
     local _source = source
-    local User = VorpCore.getUser(source)
+    local User = gumCore.getUser(source)
     local Character = User.getUsedCharacter
 	local fish = fishEntity[fishModel]
 	local fish_name = fishNames[fishModel]
-	VorpInv.addItem(_source, fish, 1)
+	Inventory.addItem(_source, fish, 1)
 	TriggerClientEvent("vorp:TipBottom", _source, 'You got a '..fish_name, 4000)
 end)
 
 RegisterServerEvent('vorp_fishing:discord_keep')
 AddEventHandler("vorp_fishing:discord_keep", function(fishModel, fishWeight)
     local _source = source
-    local User = VorpCore.getUser(source)
+    local User = gumCore.getUser(source)
     local Character = User.getUsedCharacter
 	local fish = fishEntity[fishModel]
 	local fish_name = fishNames[fishModel]
