@@ -243,7 +243,7 @@ Citizen.CreateThread(function()
                                 fishForce = 0.8
                             end
                         end
-                        TaskSmartFleeCoord(fishHandle, GetEntityCoords(playerPed), 40.0, 50, 8, 1077936128)
+                        --TaskSmartFleeCoord(fishHandle, GetEntityCoords(playerPed), 40.0, 50, 8, 1077936128)  Controls Reel Out Function, this shit sucks and is GARBO
                                                 
                          -- import from ptfx on vorp_fishing c# version
                         local particlecoords = GetEntityCoords(fishHandle)
